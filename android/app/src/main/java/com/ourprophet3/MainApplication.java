@@ -10,6 +10,12 @@ import com.facebook.soloader.SoLoader;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
+import com.rumax.reactnative.pdfviewer.PDFViewPackage;
+import cl.json.RNSharePackage;
+import cl.json.ShareApplication;
+
+import com.facebook.react.BuildConfig;
+
 public class MainApplication extends Application implements ReactApplication {
 
   private final ReactNativeHost mReactNativeHost =
@@ -24,7 +30,8 @@ public class MainApplication extends Application implements ReactApplication {
           @SuppressWarnings("UnnecessaryLocalVariable")
           List<ReactPackage> packages = new PackageList(this).getPackages();
           // Packages that cannot be autolinked yet can be added manually here, for example:
-          // packages.add(new MyReactNativePackage());
+          packages.add(new PDFViewPackage());
+          packages.add(new RNSharePackage());
           return packages;
         }
 

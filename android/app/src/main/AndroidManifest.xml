@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.rndiffapp">
+  package="com.ourprophet3">
 
     <uses-permission android:name="android.permission.INTERNET" />
 

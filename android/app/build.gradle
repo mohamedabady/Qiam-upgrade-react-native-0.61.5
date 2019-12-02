@@ -121,14 +121,20 @@ def enableHermes = project.ext.react.get("enableHermes", false);
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
-
+    packagingOptions {
+        pickFirst '**/libc++_shared.so'
+        //pickFirst '**/libjsc.so'
+    }
+    lintOptions {
+        abortOnError false
+    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
     defaultConfig {
-        applicationId "com.rndiffapp"
+        applicationId "com.ourprophet3"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -179,9 +185,14 @@ android {
 }
 
 dependencies {
+    // def supportLibVersion = safeExtGet('supportLibVersion', '28.0.3')
+    // def supportLibMajorVersion = supportLibVersion.split('\\.')[0] as int
+    // def appCompatLibName =  (supportLibMajorVersion < 20) ? "androidx.appcompat:appcompat" : "com.android.support:appcompat-v7"
+    // implementation "$appCompatLibName:$supportLibVersion"
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.facebook.react:react-native:+"  // From node_modules
-
+    implementation project(':react-native-view-pdf')
+    implementation project(':react-native-share')
     if (enableHermes) {
         def hermesPath = "../../node_modules/hermes-engine/android/";
         debugImplementation files(hermesPath + "hermes-debug.aar")

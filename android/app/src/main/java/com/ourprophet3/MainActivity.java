@@ -1,4 +1,4 @@
-package com.rndiffapp;
+package com.ourprophet3;
 
 import com.facebook.react.ReactActivity;
 
