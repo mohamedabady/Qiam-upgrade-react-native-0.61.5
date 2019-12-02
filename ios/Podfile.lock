@@ -1,0 +1,27 @@
+PODS:
+  - React/Core (0.57.7):
+    - yoga (= 0.57.7.React)
+  - React/RCTImage (0.57.7):
+    - React/Core
+    - React/RCTNetwork
+  - React/RCTNetwork (0.57.7):
+    - React/Core
+  - yoga (0.57.7.React)
+
+DEPENDENCIES:
+  - React/RCTImage (from `../node_modules/react-native`)
+  - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
+
+EXTERNAL SOURCES:
+  React:
+    :path: "../node_modules/react-native"
+  yoga:
+    :path: "../node_modules/react-native/ReactCommon/yoga"
+
+SPEC CHECKSUMS:
+  React: 67899bbb285ceb9b4ee1c88b3991602ba5772ad2
+  yoga: 192d724e53380b783e09b7d687a55cd8ed5188be
+
+PODFILE CHECKSUM: 90b06a19dd22d2c5098ee94a18f6ce63688a6c7f
+
+COCOAPODS: 1.7.3
